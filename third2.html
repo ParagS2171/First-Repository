@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use of InstanceOf Operator</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Use of InstanceOf Operator</h1>
+
+    <ul>
+        <li>
+            <p>Type Checking at Runtime: The primary purpose of instanceof is to determine if an object belongs to a
+                specific class or if it implements a particular interface during the execution of your program. This is
+                different from compile-time type checking, where the compiler verifies type compatibility based on
+                declarations.</p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Conditional Logic Based on Type: You often use instanceof within conditional statements (if, else if) to
+                perform different actions based on the object's type.
+
+                For example, imagine you have a collection of different Shape objects (like Circle, Square, Triangle),
+                and you want to calculate the area. The way you calculate the area will be different for each shape. You
+                could use instanceof to determine the actual type of each Shape object and then call the appropriate
+                area calculation method:
+
+                Java
+
+                if (shape instanceof Circle) {
+                Circle circle = (Circle) shape; // Need to cast to access Circle-specific methods
+                double area = circle.calculateArea();
+                System.out.println("Circle Area: " + area);
+                } else if (shape instanceof Square) {
+                Square square = (Square) shape; // Need to cast
+                double area = square.calculateArea();
+                System.out.println("Square Area: " + area);
+                } // ... and so on for other shapes</p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Safely Casting Objects: When you have a reference to an object of a superclass or an interface, and you
+                need to access methods or properties specific to a subclass, you need to "cast" the object to that
+                subclass type. However, if the object isn't actually an instance of that subclass, the cast will result
+                in a ClassCastException at runtime, crashing your program. instanceof allows you to check the object's
+                type before attempting the cast, making your code safer.</p>
+        </li>
+    </ul>
+
+
+</body>
+
+</html>
